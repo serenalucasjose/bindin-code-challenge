@@ -1,13 +1,17 @@
 <template>
     <div>
-        <h2 class="text-2xl font-bold mb-4">Poll Results</h2>
+        <h2 class="text-2xl font-bold text-gray-900 md:text-3xl dark:text-white mb-4">
+            Respuestas
+        </h2>
         <div v-if="results.length">
-            <div v-for="(result, index) in results" :key="index" class="mb-2">
-                <p>{{ result.text }}: {{ result.votes }} votes</p>
+            <div v-for="(result, index) in results" :key="index" class="mb-2 text-white">
+                <p><strong>{{ result.text }}</strong>: {{ result.votes }} votos</p>
             </div>
         </div>
         <div v-else>
-            <p>No results available.</p>
+            <h4 class="text-lg font-bold text-gray-900 md:text-lg dark:text-white">
+                No hay informacion disponible
+            </h4>
         </div>
     </div>
 </template>

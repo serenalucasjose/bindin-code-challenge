@@ -1,18 +1,27 @@
 <template>
     <div>
-        <h2 class="text-2xl font-bold mb-4">Forms List</h2>
-        <nuxt-link to="/" class="text-green-500 underline mb-4 block">Back to Home</nuxt-link>
+        <h2 class="text-2xl font-bold text-gray-900 md:text-3xl dark:text-white mb-4">
+            Formularios
+        </h2>
         <div v-if="forms.length">
             <div v-for="form in forms" :key="form.id" class="mb-4">
-                <h3 class="text-xl mb-2">Form {{ form.id }}</h3>
-                <nuxt-link :to="`/forms/respond?id=${form.id}`"
-                    class="text-green-500 underline mr-4">Respond</nuxt-link>
-                <nuxt-link :to="`/forms/results?id=${form.id}`" class="text-green-500 underline">View
-                    Responses</nuxt-link>
+                <h4 class="text-xl mb-2 text-white">Form {{ form.id }}</h4>
+                <nuxt-link
+                    :to="`/forms/respond?id=${form.id}`"
+                    class="inline-block rounded-sm border border-blue-600 px-6 py-1 text-sm font-medium text-blue-600 hover:bg-blue-600 hover:text-white focus:ring-3 focus:outline-hidden">
+                    Responder
+                </nuxt-link>
+                <nuxt-link
+                    :to="`/forms/results?id=${form.id}`"
+                    class="inline-block rounded-sm border border-blue-600 px-6 py-1 ml-2 text-sm font-medium text-blue-600 hover:bg-blue-600 hover:text-white focus:ring-3 focus:outline-hidden">
+                    Ver respuestas
+                </nuxt-link>
             </div>
         </div>
         <div v-else>
-            <p>No forms available.</p>
+            <h4 class="text-lg font-bold text-gray-900 md:text-lg dark:text-white">
+                No hay formularios disponibles
+            </h4>
         </div>
     </div>
 </template>

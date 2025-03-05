@@ -1,20 +1,28 @@
 <template>
     <div>
-        <h2 class="text-2xl font-bold mb-4">Respond to Poll</h2>
+        <h2 class="text-2xl font-bold text-gray-900 md:text-3xl dark:text-white mb-4">
+            Respuesta encuesta
+        </h2>
         <div v-if="poll">
-            <h3 class="text-xl mb-2">{{ poll.question }}</h3>
+            <h4 class="text-xl mb-2 text-white">{{ poll.question }}</h4>
             <form @submit.prevent="vote">
                 <div v-for="(option, index) in poll.options" :key="index" class="mb-2">
                     <label>
                         <input type="radio" :value="index" v-model="selectedOption" />
-                        {{ option.text }}
+                        <span class="text-white text-sm ml-2">{{ option.text }}</span>
                     </label>
                 </div>
-                <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded">Vote</button>
+                <button
+                    type="submit"
+                    class="inline-block rounded-sm border border-blue-600 px-6 py-1 text-sm font-medium text-blue-600 hover:bg-blue-600 hover:text-white focus:ring-3 focus:outline-hidden">
+                    Votar
+                </button>
             </form>
         </div>
         <div v-else>
-            <p>No poll available.</p>
+            <h4 class="text-lg font-bold text-gray-900 md:text-lg dark:text-white">
+                No hay una encuesta disponible
+            </h4>
         </div>
     </div>
 </template>
