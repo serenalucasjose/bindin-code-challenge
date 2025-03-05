@@ -1,1 +1,0 @@
-import{B as t}from"./BULBfO3x.js";const n=t("formStore",{state:()=>({forms:[]}),actions:{createForm(o){const s={id:this.forms.length+1,questions:o,responses:[]};this.forms.push(s)},respondForm(o,s){const r=this.forms.find(e=>e.id===o);r&&r.responses.push(s)},getFormResponses(o){const s=this.forms.find(r=>r.id===o);return s?s.responses:[]}}});export{n as u};
